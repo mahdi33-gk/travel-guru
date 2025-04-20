@@ -39,7 +39,7 @@ const SwiperComponent = () => {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={30}
-        slidesPerView={1.7}
+        slidesPerView={2.3}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
@@ -60,9 +60,9 @@ const SwiperComponent = () => {
         onSlideChange={() => console.log('slide changed')}
       >
         {destinations.map((dest, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide key={idx} className='flex justify-center'>
             <div
-              className="relative w-80 h-96 rounded-xl overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-105"
+              className="relative w-full h-96 rounded-xl overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-105"
               style={{
                 backgroundImage: `url(${dest.image})`,
                 backgroundSize: 'cover',
