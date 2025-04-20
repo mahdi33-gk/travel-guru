@@ -8,6 +8,10 @@ export default {
     extend: {
       colors:{
         primary: 'rgb(249, 165, 26)'
+      },
+      fontFamily:{
+        bebas: "Bebas Neue", 
+        monster: "Montserrat",
       }
     },
   },

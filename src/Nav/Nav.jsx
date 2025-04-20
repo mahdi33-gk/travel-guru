@@ -49,7 +49,7 @@ const Nav = () => {
             </ul>
           </div>
           <div className="text-white">
-            <img className="w-44 invert" src={Logo} alt="" />
+            <img className="w-36 invert" src={Logo} alt="" />
           </div>
         </div>
         <label className="input sm:hidden md:hidden lg:flex w-full bg-white/10 backdrop-blur-xl text-white border-white ">
