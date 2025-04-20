@@ -61,7 +61,7 @@ const SwiperComponent = () => {
         {destinations.map((dest, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className="relative h-96 rounded-xl overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-105"
+              className="relative w-80 h-96 rounded-xl overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-105"
               style={{
                 backgroundImage: `url(${dest.image})`,
                 backgroundSize: 'cover',

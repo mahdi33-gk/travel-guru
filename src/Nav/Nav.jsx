@@ -52,7 +52,7 @@ const Nav = () => {
             <img className="w-36 invert" src={Logo} alt="" />
           </div>
         </div>
-        <label className="input sm:hidden md:hidden lg:flex w-full bg-white/10 backdrop-blur-xl text-white border-white ">
+        <label className="input hidden sm:hidden md:hidden lg:flex w-full bg-white/10 backdrop-blur-xl text-white border-white ">
             <svg
               className="h-[1em] opacity-50"
               xmlns="http://www.w3.org/2000/svg"
