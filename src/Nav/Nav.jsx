@@ -49,7 +49,7 @@ const Nav = () => {
             </ul>
           </div>
           <div className="text-white">
-            <img className="w-36 invert" src={Logo} alt="" />
+            <img className="md:w-36 w-28 invert" src={Logo} alt="" />
           </div>
         </div>
         <label className="input hidden md:hidden lg:flex w-full bg-white/10 backdrop-blur-xl text-white border-white ">
@@ -78,7 +78,7 @@ const Nav = () => {
           
         </div>
         <div className="navbar-end">
-          <a className="btn bg-primary border-transparent">Button</a>
+          <a className="btn bg-primary border-transparent">Login</a>
         </div>
       </div>
     </div>

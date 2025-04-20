@@ -39,13 +39,24 @@ const SwiperComponent = () => {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={30}
-        slidesPerView={2.3}
+        
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1.6, // 👈 mobile
+          },
+          640: {
+            slidesPerView: 1.5, // 👈 small tablets
+          },
+          768: {
+            slidesPerView: 2.3, // 👈 md and up
+          },
+        }}
         onSwiper={(swiper) => {
           setTimeout(() => {
             if (swiper.params.navigation) {
