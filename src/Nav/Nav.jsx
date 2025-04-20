@@ -38,7 +38,7 @@ useEffect(() => {
   );
   return (
     <div className="">
-      <div className={`navbar bg-transparent absolute w-11/12 mx-auto z-50 transition-all duration-300 ${
+      <div className={`navbar bg-transparent -translate-x-1/2 left-1/2 absolute w-11/12 mx-auto z-50 transition-all duration-300 ${
     scrolled ? "bg-black z-50" : "bg-transparent"
 
   }`}>
