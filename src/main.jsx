@@ -8,6 +8,7 @@ import {
 import App from './App.jsx'
 import Home from './Components.jsx/Home.jsx';
 import Error from './Components.jsx/Error.jsx';
+import Destination from './Components.jsx/Destination.jsx';
 
 
 const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     errorElement: <Error></Error>,
   },
+  {
+    path: '/destination',
+    element:<Destination></Destination>
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(

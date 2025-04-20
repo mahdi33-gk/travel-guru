@@ -4,8 +4,9 @@ import Nav from "../Nav/Nav";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Swiper from "./SwiperComponent";
 import LeftHero from "./LeftHero";
+import DestinationCard from "./DestinationCard";
 
-const Home = () => {
+const Destination = () => {
   return (
     <section className="font-monster">
       <header className="w-11/12 max-w-screen-xl mx-auto">
@@ -26,21 +27,13 @@ const Home = () => {
                 <div className="space-y-3">
                   <LeftHero></LeftHero>
                   <p className="text-white font-monster">
-                    Cox's Bazar is a city, fishing port, tourism centre and
-                    <br className="hidden md:flex"/> district headquarters in southeastern Bangladesh. It
-                    is <br className="hidden md:flex"/> famous mostly for its long natural sandy beach,
-                    and it ...
+                  Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s  known <br />for its very long, sandy beachfront, stretching from Sea Beach in the<br /> north to Kolatoli Beach in the south. Aggameda Khyang monastery <br />is home to bronze statues and centuries-old Buddhist manuscripts.<br /> South of town, the tropical rainforest of Himchari National Park has  <br />waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.
                   </p>
-                  <div>
-                  <button className="btn bg-primary border-transparent">
-                    Booking <FaLongArrowAltRight></FaLongArrowAltRight>
-                  </button>
+                  
                 </div>
-                </div>
-                
               </div>
               <div className="z-50 w-full text-white  md:col-span-5">
-                <Swiper></Swiper>
+                <DestinationCard></DestinationCard>
               </div>
             </div>
           </div>
@@ -50,4 +43,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Destination;
