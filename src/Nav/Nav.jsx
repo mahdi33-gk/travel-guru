@@ -1,7 +1,24 @@
 import Logo from "../logo.png";
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { FcMenu } from "react-icons/fc";
+
 
 const Nav = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
   const links = (
     <>
       <li>
@@ -21,29 +38,18 @@ const Nav = () => {
   );
   return (
     <div className="">
-      <div className="navbar bg-transparent fixed top-0 inset-x-0 w-11/12 mx-auto z-50">
+      <div className={`navbar bg-transparent absolute w-11/12 mx-auto z-50 transition-all duration-300 ${
+    scrolled ? "bg-black z-50" : "bg-transparent"
+
+  }`}>
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {" "}
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
-              </svg>
+            <div tabIndex={0} role="button" className="btn text-2xl btn-ghost lg:hidden">
+            <FcMenu />
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm text-white bg-black dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm text-white bg-black dropdown-content rounded-box  mt-3 w-52 p-2 shadow z-[999]"
             >
               {links}
             </ul>
