@@ -11,21 +11,22 @@ import Bandarban from '../images/sundorbon.png'
 import Cox2 from '../images/Rectangle 1.png'
 
 const destinations = [
+  
   {
-    name: "COX'S BAZAR",
-    image: Cox, // Replace with real paths
+    name: 'SUNDARBANS',
+    image: Bandarban,
   },
   {
     name: 'SREEMANGAL',
     image: Sajek,
   },
   {
-    name: 'SUNDARBANS',
-    image: Bandarban,
+    name: "COX'S BAZAR",
+    image: Cox2, // Replace with real paths
   },
   {
     name: 'BANDARBAN',
-    image: Cox2,
+    image: Cox,
   },
 ];
 
@@ -38,7 +39,7 @@ const SwiperComponent = () => {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={1.7}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,

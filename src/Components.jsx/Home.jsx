@@ -20,7 +20,7 @@ const Home = () => {
           >
             <div className="absolute inset-0  bg-black bg-opacity-70 z-0"></div>
 
-            <div className="grid grid-cols-12 justify-center items-center w-11/12 mx-auto mt-5">
+            <div className="md:grid md:grid-cols-12 justify-center items-center w-11/12 mx-auto mt-5">
               <div className="z-50 col-span-7 flex flex-col gap-5">
                 <h1 className="font-bebas text-8xl text-white">Cox's bazar</h1>
                 <p className="text-white">
