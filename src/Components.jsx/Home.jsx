@@ -2,7 +2,7 @@ import React from "react";
 import BannerImg from "../images/Rectangle 1.png";
 import Nav from "../Nav/Nav";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Swiper from "./Swiper";
+import Swiper from "./SwiperComponent";
 
 const Home = () => {
   return (
@@ -18,26 +18,27 @@ const Home = () => {
               backgroundImage: `url(${BannerImg})`,
             }}
           >
-            <div className="absolute inset-0  bg-black bg-opacity-70 z-0">
-            </div>
-            <div className="z-50  flex flex-col gap-5">
-              <h1 className="font-bebas text-8xl text-white">Cox's bazar</h1>
-              <p className="text-white">
-                Cox's Bazar is a city, fishing port, tourism centre and <br />{" "}
-                district headquarters in southeastern Bangladesh. It is <br />{" "}
-                famous mostly for its long natural sandy beach, and it ...
-              </p>
-              <div>
-                <button className="btn bg-primary border-transparent">
-                  Booking <FaLongArrowAltRight></FaLongArrowAltRight>
-                </button>
+            <div className="absolute inset-0  bg-black bg-opacity-70 z-0"></div>
+
+            <div className="grid grid-cols-12">
+              <div className="z-50 col-span-7 flex flex-col gap-5">
+                <h1 className="font-bebas text-8xl text-white">Cox's bazar</h1>
+                <p className="text-white">
+                  Cox's Bazar is a city, fishing port, tourism centre and <br />{" "}
+                  district headquarters in southeastern Bangladesh. It is <br />{" "}
+                  famous mostly for its long natural sandy beach, and it ...
+                </p>
+                <div>
+                  <button className="btn bg-primary border-transparent">
+                    Booking <FaLongArrowAltRight></FaLongArrowAltRight>
+                  </button>
+                </div>
               </div>
-            </div>
-              <div className="z-50 text-white">
+              <div className="z-50 text-white col-span-5">
                 <h1>hello</h1>
                 <Swiper></Swiper>
               </div>
-            
+            </div>
           </div>
         </div>
       </main>
