@@ -14,12 +14,12 @@ const DestinationCard = () => {
   };
   return (
     <section
-      className="min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-10"
+      className="w-full px-4 py-10 bg-cover bg-center flex justify-center "
       
     >
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-lg p-6 space-y-4"
+        className="w-full max-w-md bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-lg p-8 space-y-8"
       >
         <div>
           <label className="text-gray-700 font-semibold">Origin</label>
