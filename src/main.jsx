@@ -11,6 +11,7 @@ import Register from "./Components.jsx/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import Private from "./Private/Private.jsx";
 import Contact from "./Components.jsx/Contact.jsx";
+import Blog from "./Components.jsx/Blog.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: '/contact',
     element: <Contact></Contact>
+  },
+  {
+    path: '/blog',
+    element: <Blog></Blog>
   }
 ]);
 
