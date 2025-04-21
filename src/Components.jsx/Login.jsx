@@ -20,7 +20,7 @@ const Login = () => {
     })
     .catch((error)=>{
       setErr(error)
-      setUser(null)
+      
     })
   }
   return (
