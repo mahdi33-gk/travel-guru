@@ -41,9 +41,9 @@ const DestinationCard = () => {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1">
-            <label className="text-gray-700 font-semibold">From</label>
+        <div className="flex flex-col lg:flex-row gap-4 w-full">
+          <div className="w-full ">
+            <label className="text-gray-700  font-semibold">From</label>
             <div className="relative">
               <input
                 type="date"
@@ -55,7 +55,7 @@ const DestinationCard = () => {
             </div>
           </div>
 
-          <div className="flex-1">
+          <div className="w-full  mt-4 sm:mt-0">
             <label className="text-gray-700 font-semibold">To</label>
             <div className="relative">
               <input
