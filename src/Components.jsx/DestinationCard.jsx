@@ -1,12 +1,15 @@
 import React from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const DestinationCard = () => {
   const [origin, setOrigin] = useState("Dhaka");
   const [destination, setDestination] = useState("Cox's Bazar");
   const [fromDate, setFromDate] = useState("2025-09-01");
   const [toDate, setToDate] = useState("2025-09-12");
+
+  const popup =()=> toast('Booking done!')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,11 +73,13 @@ const DestinationCard = () => {
         </div>
 
         <button
+          onClick={popup}
           type="submit"
           className="btn w-full bg-primary hover:bg-[#ff8c00] font-semibold"
         >
           Start Booking
         </button>
+        <ToastContainer></ToastContainer>
       </form>
     </section>
   );

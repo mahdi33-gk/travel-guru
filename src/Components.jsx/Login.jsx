@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import Nav from "../Nav/Nav";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+  const {user,err,setUser,setErr,emailSignIn} = useContext(AuthContext);
+  const navigate =useNavigate();
+  const loginHandler =e=>{
+    setErr(null)
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    // signIn
+    emailSignIn(email,password)
+    .then(result => {
+      setUser(result.user)
+      navigate('/')
+    })
+    .catch((error)=>{
+      setErr(error)
+      setUser(null)
+    })
+  }
   return (
     <div>
       <div className="">
@@ -13,12 +33,13 @@ const Login = () => {
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
           <div className="bg-white border rounded-md p-8 w-11/12 mx-auto max-w-sm shadow-sm">
             <h2 className="text-2xl font-semibold mb-6">Login</h2>
-            <form className="space-y-4 sm:">
+            <form onSubmit={loginHandler} className="space-y-4 ">
               <div>
                 <label className="block text-sm text-gray-700">
                   Username or Email
                 </label>
                 <input
+                  name="email"
                   type="text"
                   className="w-full border-b focus:outline-none focus:border-orange-500 py-1"
                   placeholder=""
@@ -28,6 +49,7 @@ const Login = () => {
                 <label className="block text-sm text-gray-700">Passowrd</label>{" "}
                 {/* Keeping the typo for fidelity */}
                 <input
+                  name="password"
                   type="password"
                   className="w-full border-b focus:outline-none focus:border-orange-500 py-1"
                   placeholder=""
@@ -44,7 +66,7 @@ const Login = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded mt-2"
+                className="w-full bg-primary hover:bg-orange-600 text-black py-2 rounded mt-2"
               >
                 Login
               </button>

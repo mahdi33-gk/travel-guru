@@ -1,20 +1,21 @@
 import Logo from "../logo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FcMenu } from "react-icons/fc";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Nav = () => {
- 
+  const {user,setUser,err,setErr} = useContext(AuthContext);
   const {pathname} = useLocation();
   const myroute = ['/login', '/register'];
   const ismyroute = myroute.includes(pathname);
-  console.log(pathname);
+
 
   const links = (
     < >
       <li className={`${ismyroute? 'text-black':'text-white'}`}>
-        <NavLink to={'/news'}>News</NavLink>
+        <NavLink to={'/'}>News</NavLink>
       </li>
       <li className={`${ismyroute? 'text-black':'text-white'}`}>
         <NavLink to={'/destination'}>Destination</NavLink>
@@ -75,7 +76,9 @@ const Nav = () => {
           
         </div>
         <div className="navbar-end">
-          <Link to={'/login'} className="btn bg-primary border-transparent">Login</Link>
+          {
+            user? <h1>{user.email}</h1>:<Link to={'/login'} className="btn bg-primary border-transparent">Login</Link>
+          }
         </div>
       </div>
     </div>
