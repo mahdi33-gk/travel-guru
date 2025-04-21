@@ -10,6 +10,7 @@ import Login from "./Components.jsx/Login.jsx";
 import Register from "./Components.jsx/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import Private from "./Private/Private.jsx";
+import Contact from "./Components.jsx/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register></Register>,
   },
+  {
+    path: '/contact',
+    element: <Contact></Contact>
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

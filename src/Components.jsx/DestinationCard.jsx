@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const DestinationCard = () => {
   const [origin, setOrigin] = useState("Dhaka");
@@ -9,17 +9,14 @@ const DestinationCard = () => {
   const [fromDate, setFromDate] = useState("2025-09-01");
   const [toDate, setToDate] = useState("2025-09-12");
 
-  const popup =()=> toast('Booking done!')
+  const popup = () => toast("Booking done!");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ origin, destination, fromDate, toDate });
   };
   return (
-    <section
-      className="w-full px-4 py-10 bg-cover bg-center flex justify-center "
-      
-    >
+    <section className="w-full px-4 py-10 bg-cover bg-center flex justify-center ">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-lg p-8 space-y-8"
@@ -79,7 +76,19 @@ const DestinationCard = () => {
         >
           Start Booking
         </button>
-        <ToastContainer></ToastContainer>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          
+        ></ToastContainer>
       </form>
     </section>
   );
