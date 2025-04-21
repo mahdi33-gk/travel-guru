@@ -46,7 +46,7 @@ const Nav = () => {
             </ul>
           </div>
           <div className="text-white">
-            <img className={`md:w-36 w-28  ${ismyroute? '':'invert'}`} src={Logo} alt="" />
+            <img className={`md:w-36 w-24  ${ismyroute? '':'invert'}`} src={Logo} alt="" />
           </div>
         </div>
         <label className={`input hidden md:hidden lg:flex w-full bg-white/10 backdrop-blur-xl text-white border-white ${ismyroute? 'hidden':'flex'}`}>
