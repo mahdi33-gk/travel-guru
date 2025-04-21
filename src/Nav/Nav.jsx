@@ -40,7 +40,7 @@ const Nav = () => {
             </div>
             <ul
               tabIndex={0}
-              className={`menu menu-sm text-white bg-black dropdown-content rounded-box  mt-3 w-52 p-2 shadow z-[999] `}
+              className={`menu menu-sm text-white  dropdown-content rounded-box  mt-3 w-52 p-2 shadow z-[999] `}
             >
               {links}
             </ul>
