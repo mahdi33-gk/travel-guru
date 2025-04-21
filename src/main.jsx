@@ -9,6 +9,7 @@ import Destination from "./Components.jsx/Destination.jsx";
 import Login from "./Components.jsx/Login.jsx";
 import Register from "./Components.jsx/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
+import Private from "./Private/Private.jsx";
 
 const router = createBrowserRouter([
   {
