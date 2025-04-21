@@ -1,16 +1,27 @@
 import Logo from "../logo.png";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { FcMenu } from "react-icons/fc";
 import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Nav = () => {
-  const {user,setUser,err,setErr} = useContext(AuthContext);
+  const {user,setUser,err,setErr,signoutUser} = useContext(AuthContext);
   const {pathname} = useLocation();
   const myroute = ['/login', '/register'];
   const ismyroute = myroute.includes(pathname);
-
+  const navigate = useNavigate();
+  
+  const logout = () =>{
+    signoutUser()
+    .then(()=>{
+      setUser(null);
+      navigate('/login')
+    })
+    .catch(error=>{
+      setErr(error)
+    })
+  }
 
   const links = (
     < >
@@ -77,7 +88,10 @@ const Nav = () => {
         </div>
         <div className="navbar-end">
           {
-            user? <h1>{user.email}</h1>:<Link to={'/login'} className="btn bg-primary border-transparent">Login</Link>
+            user? <div>
+              
+              <Link onClick={logout} className="btn bg-primary border-transparent">Log Out</Link>
+            </div>:<Link to={'/login'} className="btn bg-primary border-transparent">Login</Link>
           }
         </div>
       </div>
