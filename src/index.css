@@ -4,3 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a.active {
+    background: linear-gradient(to right, #FBBF24, #F59E0B); /* bright yellow */
+    color: #000;
+
+  }

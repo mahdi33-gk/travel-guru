@@ -26,8 +26,8 @@ const Destination = () => {
               <div className="z-20 md:col-span-7 justify-center flex flex-col gap-5">
                 <div className="space-y-3">
                   <LeftHero></LeftHero>
-                  <p className="text-white font-monster">
-                  Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s  known <br />for its very long, sandy beachfront, stretching from Sea Beach in the<br /> north to Kolatoli Beach in the south. Aggameda Khyang monastery <br />is home to bronze statues and centuries-old Buddhist manuscripts.<br /> South of town, the tropical rainforest of Himchari National Park has  <br />waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.
+                  <p className="text-white text-[15px] md:text-[18px] font-monster">
+                  Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s  known <br className=" hidden md:flex " />for its very long, sandy beachfront, stretching from Sea Beach in the<br className=" hidden md:flex " /> north to Kolatoli Beach in the south. Aggameda Khyang monastery <br className=" hidden md:flex "/>is home to bronze statues and centuries-old Buddhist manuscripts.<br className=" hidden md:flex "/> South of town, the tropical rainforest of Himchari National Park has  <br className=" hidden md:flex "/>waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.
                   </p>
                   
                 </div>

@@ -22,16 +22,16 @@ useEffect(() => {
   const links = (
     <>
       <li>
-        <NavLink>News</NavLink>
+        <NavLink to={'/news'}>News</NavLink>
       </li>
       <li>
-        <NavLink>Destination</NavLink>
+        <NavLink to={'/destination'}>Destination</NavLink>
       </li>
       <li>
-        <NavLink>Blog</NavLink>
+        <NavLink to={'/blog'}>Blog</NavLink>
       </li>
       <li>
-        <NavLink>Contact</NavLink>
+        <NavLink to={'/contact'}>Contact</NavLink>
       </li>
       
     </>
