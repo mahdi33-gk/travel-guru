@@ -9,6 +9,7 @@ import App from './App.jsx'
 import Home from './Components.jsx/Home.jsx';
 import Error from './Components.jsx/Error.jsx';
 import Destination from './Components.jsx/Destination.jsx';
+import Login from './Components.jsx/Login.jsx';
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/destination',
     element:<Destination></Destination>
+  },
+  {
+    path: '/login',
+    element: <Login></Login>
   }
 ]);
 
