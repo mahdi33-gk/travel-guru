@@ -23,6 +23,12 @@ const Blog = () => {
             <div className="absolute inset-0  bg-black bg-opacity-70 z-0"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-3 justify-center items-center w-11/12 mx-auto mt-28 md:mt-5">
+              <div className="md:col-span-7 z-20 text-white">
+                <h1 className="font-bebas text-6xl md:text-8xl text-white">Travel Guru Agency</h1>
+                <p className="text-white font-monster">
+                We are Bangladesh’s first all-in-one travel agency. Whether you’re booking a hotel in your dream destination or need a personal car to pick you up—we’ve got you covered. Trusted, comfortable, and always on time.
+                  </p>
+              </div>
               <div className="z-50 w-full pb-3 text-white  md:col-span-5">
                 <iframe
                   className="w-full h-[400px] border-primary border-2"

@@ -78,7 +78,7 @@ const DestinationCard = () => {
         </button>
         <ToastContainer
           position="top-center"
-          autoClose={5000}
+          autoClose={1000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick={false}
@@ -86,7 +86,7 @@ const DestinationCard = () => {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="light"
+          theme="dark"
           
         ></ToastContainer>
       </form>

@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
-    const {userCreationWithEmail,setUser,setErr,err,googleSignIn}= useContext(AuthContext);
+    const {userCreationWithEmail,setUser,setErr,err,googleSignIn,userUpdate}= useContext(AuthContext);
     const navigate =useNavigate();
 
     const provider = new GoogleAuthProvider();
@@ -32,7 +32,12 @@ const Register = () => {
         userCreationWithEmail(email,password)
         .then(result=>{
             setUser(result.user)
-            navigate('/')
+            userUpdate({displayName:name,photoURL:photo}).then(result=>{
+              navigate('/')
+            })
+            .catch(err=>{
+              setErr(err)
+            })
             
         })
         .catch((err)=>{
