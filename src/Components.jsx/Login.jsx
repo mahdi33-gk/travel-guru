@@ -2,16 +2,21 @@ import React, { useContext } from "react";
 import Nav from "../Nav/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-  const {user,err,setUser,setErr,emailSignIn} = useContext(AuthContext);
+  const provider = new GoogleAuthProvider();
+  const {user,err,setUser,setErr,emailSignIn,googleSignIn} = useContext(AuthContext);
   const navigate =useNavigate();
   const loginHandler =e=>{
     setErr(null)
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    console.log(googleSignIn)
 
+
+    
     // signIn
     emailSignIn(email,password)
     .then(result => {
@@ -21,6 +26,17 @@ const Login = () => {
     .catch((error)=>{
       setErr(error)
       
+    })
+  }
+  const googleSignInhander= ()=>{
+    // signInWithGoogle
+    googleSignIn(provider)
+    .then(result=>{
+      setUser(result.user)
+      navigate('/')
+    })
+    .catch(err=>{
+      setErr(err)
     })
   }
   return (
@@ -82,7 +98,7 @@ const Login = () => {
           <div className="flex flex-col">
             <div className="divider ">OR</div>
             <div className="flex flex-col space-y-2">
-              <button className="btn bg-white text-black border-[#e5e5e5]">
+              <button onClick={googleSignInhander} className="btn bg-white text-black border-[#e5e5e5]">
                 <svg
                   aria-label="Google logo"
                   width="16"
