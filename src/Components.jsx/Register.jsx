@@ -2,10 +2,24 @@ import React, { useContext } from "react";
 import Nav from "../Nav/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
-    const {userCreationWithEmail,setUser,setErr,err}= useContext(AuthContext);
+    const {userCreationWithEmail,setUser,setErr,err,googleSignIn}= useContext(AuthContext);
     const navigate =useNavigate();
+
+    const provider = new GoogleAuthProvider();
+    const googleSignInhander= ()=>{
+      // signInWithGoogle
+      googleSignIn(provider)
+      .then(result=>{
+        setUser(result.user)
+        navigate('/')
+      })
+      .catch(err=>{
+        setErr(err)
+      })
+    }
 
     const submitHandler = (e) => {
         setErr(null)
@@ -115,7 +129,7 @@ const Register = () => {
             <div className="flex flex-col">
               <div className="divider ">OR</div>
               <div className="flex flex-col space-y-2">
-                <button className="btn bg-white text-black border-[#e5e5e5]">
+                <button onClick={googleSignInhander} className="btn bg-white text-black border-[#e5e5e5]">
                   <svg
                     aria-label="Google logo"
                     width="16"
