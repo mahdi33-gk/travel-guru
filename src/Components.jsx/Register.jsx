@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Nav from "../Nav/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -7,6 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 const Register = () => {
     const {userCreationWithEmail,setUser,setErr,err,googleSignIn,userUpdate}= useContext(AuthContext);
     const navigate =useNavigate();
+    const [passerr, setPasserr] = useState(null);
 
     const provider = new GoogleAuthProvider();
     const googleSignInhander= ()=>{
@@ -20,14 +21,18 @@ const Register = () => {
         setErr(err)
       })
     }
-
+    
     const submitHandler = (e) => {
+      e.preventDefault();
         setErr(null)
-        e.preventDefault();
+        
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const photo = e.target.photo.value;
+        if(password.length<6){
+          return setPasserr('Password must be 6 character or more')
+        }
         // createUserProfile
         userCreationWithEmail(email,password)
         .then(result=>{
@@ -43,7 +48,7 @@ const Register = () => {
         .catch((err)=>{
             setUser(null);
             setErr(err);
-            console.log(err)
+            
         })
     }
   return (
@@ -118,6 +123,8 @@ const Register = () => {
                 >
                   Register
                 </button>
+                {err&&<p className="text-red-700 text-center">{err?.message}</p>}
+              {passerr && <p className="text-red-600 text-sm text-center">{passerr}</p>}
                 <p className="text-center text-sm text-gray-600 mt-4">
                   Already have an account?{" "}
                   <Link
@@ -128,7 +135,7 @@ const Register = () => {
                   </Link>
                 </p>
               </form>
-              <p className="text-red-700">{err?.message}</p>
+              
             </div>
             {/* divider for google login */}
             <div className="flex flex-col">
