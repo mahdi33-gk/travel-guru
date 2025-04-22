@@ -4,6 +4,7 @@ import Nav from "../Nav/Nav";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Swiper from "./SwiperComponent";
 import LeftHero from "./LeftHero";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -32,9 +33,9 @@ const Home = () => {
                     and it ...
                   </p>
                   <div>
-                  <button className="btn bg-primary border-transparent">
+                  <Link to={'/destination'} className="btn bg-primary border-transparent">
                     Booking <FaLongArrowAltRight></FaLongArrowAltRight>
-                  </button>
+                  </Link>
                 </div>
                 </div>
                 

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Nav from "../Nav/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -6,10 +6,14 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const provider = new GoogleAuthProvider();
-  const {user,err,setUser,setErr,emailSignIn,googleSignIn} = useContext(AuthContext);
+  const {user,err,setUser,setErr,emailSignIn,googleSignIn,passForgot} = useContext(AuthContext);
+  const [wrong,setWrong] = useState(null);
+  const [sent,setSent] = useState(null);
   const navigate =useNavigate();
   const loginHandler =e=>{
     setErr(null)
+    setSent(null)
+    setWrong(null)
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -38,6 +42,21 @@ const Login = () => {
     .catch(err=>{
       setErr(err)
     })
+  }
+  // passwordreset
+  const resetPass = () =>{
+    const email = prompt('enter your email');
+    if(!email){
+      return setWrong('Please provide a valid email')
+    }
+    else{
+      passForgot(email).then(()=>{
+        setSent('reset email sent')
+      })
+      .catch(err=>{
+        setWrong(err.message)
+      })
+    }
   }
   return (
     <div>
@@ -76,9 +95,9 @@ const Login = () => {
                   <input type="checkbox" className="mr-2" />
                   Remember Me
                 </label>
-                <a href="#" className="text-orange-500 hover:underline">
+                <btn onClick={resetPass} className="text-orange-500 hover:underline">
                   Forgot Password
-                </a>
+                </btn>
               </div>
               <button
                 type="submit"
@@ -86,6 +105,10 @@ const Login = () => {
               >
                 Login
               </button>
+              {wrong && <span className="text-red-500">{wrong}</span>}
+              {
+                sent&& <span className="text-red-400">{sent}</span>
+              }
               <p className="text-center text-sm text-gray-600 mt-4">
                 Don’t have an account?{" "}
                 <Link to={'/register'} className="text-orange-500 hover:underline">
